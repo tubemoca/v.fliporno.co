@@ -1,51 +1,84 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Fliporno.co embed video</title>
-	<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-	<link href="https://cdn.fluidplayer.com/v3/current/fluidplayer.min.css" rel="stylesheet" type="text/css" />
-<style>
-        html, body {
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLIPORNO.CO EMBED VIDEO</title>
+
+    <!-- Fluid Player CSS -->
+    <link href="https://cdn.fluidplayer.com/v3/current/fluidplayer.min.css" rel="stylesheet" type="text/css" />
+<script async src="https://js.wpadmngr.com/static/adManager.js" data-admpid="247123"></script>
+    <!-- Custom CSS for Outstream Video -->
+    <style>
+        body {
             margin: 0;
             padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden; /* Prevent scrolling */
             background-color: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        /* Fullscreen video container */
-        .video-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #000;
+        /* Outstream video container */
+        .outstream-container {
+            position: relative;
+            width: 100%; /* Full width */
+            max-width: 800px; /* Maximum width for the banner */
+            height: 450px; /* Height of the banner */
+            margin: 20px 0; /* Margin to space it from other content */
+            overflow: hidden; /* Prevent overflow */
+            border: 2px solid #fff; /* Optional border */
         }
 
-        /* Ensure the video fully fills the container */
-        video {
+        /* Video styling */
+        #video-id {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Ensure the video covers the entire area without stretching */
+            object-fit: cover; /* Ensures the video covers the entire area without stretching */
+        }
+
+        /* Advertisement styling */
+        .advertisement {
+            color: #fff; /* Text color */
+            background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent background */
+            padding: 10px; /* Padding around text */
+            text-align: center; /* Center the text */
+            font-size: 18px; /* Font size */
+            margin-bottom: 10px; /* Margin below advertisement */
+            border-radius: 5px; /* Rounded corners */
+        }
+
+        /* Button styling */
+        .visit-button {
+            padding: 10px 20px;
+            background-color: #ff5722; /* Button color */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .visit-button:hover {
+            background-color: #e64a19; /* Darker shade on hover */
         }
     </style>
-	</head>
-<body>	<div class="container">
-        
+</head>
+<body>
 
-        <!-- Video Player Container -->
-        <div class="video-container">
-           <video id="video-id" controls autoplay muted>
-                <source src="https://cdn77-vid-mp4.xvideos-cdn.com/HJ142ak4Ybnt0Bi9pGJWyQ==,1729396624/videos/mp4/1/d/5/xvideos.com_1d501e27662ceecbc70e6233e59edab1.mp4" type="video/mp4">
-            </video>
-        </div>
+    <!-- Outstream Video Container -->
+    <div class="outstream-container">
+        <video id="video-id" controls autoplay muted>
+            <source src="https://cdn77-vid-mp4.xvideos-cdn.com/xsUHRoCdPACg9n1iJ34l9A==,1729402134/videos/mp4/1/d/5/xvideos.com_1d501e27662ceecbc70e6233e59edab1.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <center><div data-banner-id="1420369"></div></center>
 
     <!-- Fluid Player JS -->
     <script src="https://cdn.fluidplayer.com/v3/current/fluidplayer.min.js"></script>
@@ -60,17 +93,12 @@
             },
             vastOptions: {
                 adList: [{
-                    roll: 'preRoll',
-                    vastTag: 'https://vast.yomeno.xyz/vast?spot_id=1420203' // VAST tag URL untuk iklan Cast
+                    roll: 'preRoll', // Menunjukkan iklan sebelum video
+                    vastTag: 'https://vast.yomeno.xyz/?tcid=16926' // VAST tag URL untuk iklan Cast
                 }]
             }
-        });
-
-        // Masuk ke fullscreen setelah player siap
-        player.on('play', function() {
-            player.enterFullscreen();
         });
     </script>
 
 </body>
-</html>'
+</html>
