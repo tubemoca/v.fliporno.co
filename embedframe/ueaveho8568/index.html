@@ -6,34 +6,53 @@
 	<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
 	<link href="https://cdn.fluidplayer.com/v3/current/fluidplayer.min.css" rel="stylesheet" type="text/css" />
-<style>
-        html, body {
+ <style>
+        body {
             margin: 0;
             padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden; /* Prevent scrolling */
             background-color: #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        /* Fullscreen video container */
-        .video-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: #000;
+        /* Outstream video container */
+        .outstream-container {
+            position: relative;
+            width: 100%; /* Full width */
+            max-width: 800px; /* Maximum width for the banner */
+            height: 450px; /* Height of the banner */
+            margin: 20px 0; /* Margin to space it from other content */
+            overflow: hidden; /* Prevent overflow */
+            border: 2px solid #fff; /* Optional border */
         }
 
-        /* Ensure the video fully fills the container */
-        video {
+        /* Video styling */
+        #video-id {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Ensure the video covers the entire area without stretching */
+            object-fit: cover; /* Ensures the video covers the entire area without stretching */
+        }
+
+        /* Button styling */
+        .visit-button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #ff5722; /* Button color */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .visit-button:hover {
+            background-color: #e64a19; /* Darker shade on hover */
         }
     </style>
 	</head>
