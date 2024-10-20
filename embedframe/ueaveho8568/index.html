@@ -1,0 +1,76 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Fliporno.co embed video</title>
+	<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+	<link href="https://cdn.fluidplayer.com/v3/current/fluidplayer.min.css" rel="stylesheet" type="text/css" />
+<style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden; /* Prevent scrolling */
+            background-color: #000;
+        }
+
+        /* Fullscreen video container */
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+        }
+
+        /* Ensure the video fully fills the container */
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ensure the video covers the entire area without stretching */
+        }
+    </style>
+	</head>
+<body>	<div class="container">
+        
+
+        <!-- Video Player Container -->
+        <div class="video-container">
+           <video id="video-id" controls autoplay muted>
+                <source src="https://gcore-vid.xvideos-cdn.com/09ASSDZYzAbzGUVeDsv_JA==,1729400406/videos/mp4/0/4/5/xvideos.com_045f0712d5a3abad32c4bc2f48c6bc21-1.mp4" type="video/mp4">
+            </video>
+        </div>
+
+    <!-- Fluid Player JS -->
+    <script src="https://cdn.fluidplayer.com/v3/current/fluidplayer.min.js"></script>
+
+    <script>
+        // Inisialisasi Fluid Player dengan Cast Ad dan VAST ad
+        var player = fluidPlayer('video-id', {
+            layoutControls: {
+                autoplay: true, // Autoplay video
+                mute: true,     // Video dimulai dalam mode mute
+                allowCasting: true, // Enable Cast button for Chromecast
+            },
+            vastOptions: {
+                adList: [{
+                    roll: 'preRoll',
+                    vastTag: 'https://vast.yomeno.xyz/vast?spot_id=1420203' // VAST tag URL untuk iklan Cast
+                }]
+            }
+        });
+
+        // Masuk ke fullscreen setelah player siap
+        player.on('play', function() {
+            player.enterFullscreen();
+        });
+    </script>
+
+</body>
+</html>'
